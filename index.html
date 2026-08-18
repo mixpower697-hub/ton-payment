@@ -1,35 +1,157 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>TON Payment</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forton Payment</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#0f172a,#1e293b);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+color:white;
+}
+
+.card{
+
+width:360px;
+background:#111827;
+padding:30px;
+border-radius:20px;
+box-shadow:0 0 30px rgba(0,255,255,.2);
+text-align:center;
+
+}
+
+.logo{
+
+font-size:55px;
+margin-bottom:10px;
+
+}
+
+h2{
+
+margin-bottom:10px;
+font-size:28px;
+
+}
+
+p{
+
+color:#bfc6d3;
+margin-bottom:25px;
+
+}
+
+input{
+
+width:100%;
+padding:15px;
+border:none;
+outline:none;
+border-radius:12px;
+font-size:18px;
+background:#1f2937;
+color:white;
+margin-bottom:20px;
+
+}
+
+button{
+
+width:100%;
+padding:15px;
+border:none;
+border-radius:12px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+background:#00d084;
+color:white;
+transition:.3s;
+
+}
+
+button:hover{
+
+background:#00b06f;
+transform:scale(1.03);
+
+}
+
+.footer{
+
+margin-top:20px;
+font-size:14px;
+color:#9ca3af;
+
+}
+
+</style>
+
 </head>
+
 <body>
 
-<h2>شراء FRT</h2>
+<div class="card">
 
-<input id="amount" type="number" placeholder="أدخل المبلغ بالـ TON">
+<div class="logo">🪙</div>
 
-<br><br>
+<h2>شراء Forton</h2>
 
-<button onclick="pay()">دفع</button>
+<p>ادخل كمية TON التي تريد دفعها</p>
+
+<input
+id="amount"
+type="number"
+placeholder="مثال : 10">
+
+<button onclick="pay()">
+
+💳 ادفع الآن
+
+</button>
+
+<div class="footer">
+
+آمن • سريع • شبكة TON
+
+</div>
+
+</div>
 
 <script>
-function pay() {
 
-let amount = document.getElementById("amount").value;
+function pay(){
+
+let amount=document.getElementById("amount").value;
 
 if(!amount){
+
 alert("أدخل المبلغ");
+
 return;
+
 }
 
-let wallet =
-"UQD0N_u4lRmmPiLLQdCZFduiiAub7Oh6ftWzIn7D88sumQ_9";
+let wallet="UQD0N_u4lRmmPiLLQdCZFduiiAub7Oh6ftWzIn7D88sumQ_9";
 
-window.location.href =
-`ton://transfer/${wallet}?amount=${amount*1000000000}`;
+window.location.href=`ton://transfer/${wallet}?amount=${amount*1000000000}`;
+
 }
+
 </script>
 
 </body>
