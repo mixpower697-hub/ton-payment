@@ -1,156 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>CATI Presale</title>
 
-<style>
+<link rel="stylesheet" href="style.css">
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-
-background:#090c14;
-background-image:
-radial-gradient(circle at top,#1d4ed8 0,#090c14 60%);
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-color:white;
-
-}
-
-.card{
-
-width:390px;
-background:rgba(255,255,255,.05);
-backdrop-filter:blur(20px);
-border:1px solid rgba(255,255,255,.08);
-border-radius:25px;
-padding:30px;
-box-shadow:0 0 40px rgba(37,99,235,.35);
-
-}
-
-.logo{
-
-width:90px;
-height:90px;
-margin:auto;
-border-radius:50%;
-background:linear-gradient(135deg,#2563eb,#38bdf8);
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:42px;
-
-}
-
-h1{
-
-text-align:center;
-margin-top:20px;
-font-size:32px;
-
-}
-
-.sub{
-
-text-align:center;
-margin-top:8px;
-color:#9ca3af;
-
-}
-
-.rate{
-
-margin-top:20px;
-padding:14px;
-background:#172554;
-border-radius:12px;
-text-align:center;
-font-weight:bold;
-
-}
-
-input{
-
-width:100%;
-margin-top:22px;
-padding:16px;
-background:#111827;
-border:none;
-outline:none;
-border-radius:14px;
-font-size:20px;
-color:white;
-text-align:center;
-
-}
-
-.receive{
-
-margin-top:22px;
-padding:20px;
-background:#111827;
-border-radius:14px;
-text-align:center;
-
-}
-
-.receive span{
-
-font-size:28px;
-color:#38bdf8;
-font-weight:bold;
-
-}
-
-button{
-
-margin-top:22px;
-width:100%;
-padding:16px;
-border:none;
-border-radius:14px;
-background:#2563eb;
-color:white;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
-transition:.3s;
-
-}
-
-button:hover{
-
-background:#1d4ed8;
-
-}
-
-.footer{
-
-margin-top:20px;
-font-size:13px;
-color:#94a3b8;
-text-align:center;
-line-height:24px;
-
-}
-
-</style>
+<script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
 
 </head>
 
 <body>
+
+<div class="container">
 
 <div class="card">
 
@@ -162,7 +28,7 @@ line-height:24px;
 
 <h1>CATI</h1>
 
-<p class="sub">
+<p class="subtitle">
 
 CATI Token Presale
 
@@ -170,7 +36,7 @@ CATI Token Presale
 
 <div class="rate">
 
-50 GRAM = 6,000,000 CATI
+1 GRAM = 120,000 CATI
 
 </div>
 
@@ -183,69 +49,37 @@ placeholder="Enter GRAM Amount">
 
 <p>You Will Receive</p>
 
-<br>
-
-<span id="tokens">
+<h2 id="tokens">
 
 0 CATI
 
-</span>
+</h2>
 
 </div>
 
-<button onclick="pay()">
+<div id="ton-connect"></div>
 
-🚀 BUY CATI
+<button id="buyBtn">
+
+Buy CATI
 
 </button>
 
 <div class="footer">
 
-✔ Secure Blockchain Payment
+✔ Secure Payment<br>
 
-<br>
+✔ Powered by TON Blockchain<br>
 
-✔ Fast Transaction
-
-<br>
-
-Powered by CATI
+✔ Wallet Connection via TON Connect
 
 </div>
 
 </div>
 
-<script>
+</div>
 
-const wallet="UQD0N_u4lRmmPiLLQdCZFduiiAub7Oh6ftWzIn7D88sumQ_9";
-
-document.getElementById("amount").addEventListener("input",function(){
-
-let amount=parseFloat(this.value)||0;
-
-let tokens=(amount/50)*6000000;
-
-document.getElementById("tokens").innerHTML=tokens.toLocaleString()+" CATI";
-
-});
-
-function pay(){
-
-let amount=document.getElementById("amount").value;
-
-if(!amount){
-
-alert("Enter GRAM Amount");
-
-return;
-
-}
-
-window.location.href=`ton://transfer/${wallet}?amount=${amount*1000000000}`;
-
-}
-
-</script>
+<script src="app.js"></script>
 
 </body>
 
