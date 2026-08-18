@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>CATI Presale</title>
+<title>CATI Token Sale</title>
 
 <style>
 
@@ -13,122 +11,101 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
+font-family:Arial,sans-serif;
 }
 
 body{
 
-background:
-radial-gradient(circle at top,#2563eb 0%,#111827 35%,#030712 100%);
-min-height:100vh;
+background:linear-gradient(135deg,#0b1220,#111827,#0f172a);
+height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-padding:20px;
 color:white;
 
 }
 
 .card{
 
-width:420px;
+width:380px;
 background:rgba(255,255,255,.06);
-backdrop-filter:blur(20px);
+backdrop-filter:blur(15px);
 border:1px solid rgba(255,255,255,.08);
-border-radius:24px;
+border-radius:22px;
 padding:30px;
-box-shadow:0 0 40px rgba(37,99,235,.35);
+text-align:center;
+box-shadow:0 0 35px rgba(0,180,255,.25);
 
 }
 
 .logo{
 
-width:90px;
-height:90px;
+width:80px;
+height:80px;
 margin:auto;
 border-radius:50%;
-background:linear-gradient(135deg,#38bdf8,#2563eb);
+background:#1d4ed8;
 display:flex;
-justify-content:center;
 align-items:center;
-font-size:42px;
-font-weight:bold;
-box-shadow:0 0 25px rgba(59,130,246,.5);
+justify-content:center;
+font-size:35px;
 
 }
 
 h1{
 
-margin-top:18px;
-text-align:center;
-font-size:34px;
+margin-top:20px;
+font-size:30px;
 
 }
 
-.sub{
+.subtitle{
 
-margin-top:8px;
-text-align:center;
-color:#cbd5e1;
-font-size:14px;
+margin-top:10px;
+color:#9ca3af;
+font-size:15px;
 
 }
 
-.rate{
+.input{
 
-margin-top:22px;
-padding:14px;
-border-radius:14px;
-background:#1d4ed8;
-font-size:18px;
-font-weight:bold;
-text-align:center;
+margin-top:25px;
 
 }
 
 input{
 
-margin-top:22px;
 width:100%;
-padding:16px;
+padding:15px;
+border-radius:12px;
 border:none;
 outline:none;
-background:#0f172a;
-border-radius:14px;
-color:white;
-font-size:20px;
-text-align:center;
-
-}
-
-.receive{
-
-margin-top:22px;
-padding:20px;
-background:#0f172a;
-border-radius:14px;
-text-align:center;
-
-}
-
-.receive h2{
-
-margin-top:10px;
-font-size:30px;
-color:#38bdf8;
-
-}
-button{
-
-width:100%;
-margin-top:22px;
-padding:16px;
-border:none;
-border-radius:14px;
-background:linear-gradient(135deg,#3b82f6,#2563eb);
+background:#1f2937;
 color:white;
 font-size:18px;
+text-align:center;
+
+}
+
+#tokens{
+
+margin-top:20px;
+font-size:22px;
 font-weight:bold;
+color:#60a5fa;
+
+}
+
+button{
+
+margin-top:25px;
+width:100%;
+padding:15px;
+border:none;
+border-radius:12px;
+background:#2563eb;
+color:white;
+font-size:18px;
 cursor:pointer;
 transition:.3s;
 
@@ -136,38 +113,24 @@ transition:.3s;
 
 button:hover{
 
-transform:translateY(-2px);
-box-shadow:0 0 20px rgba(59,130,246,.5);
+background:#1d4ed8;
 
 }
 
 .info{
 
-margin-top:20px;
-padding:15px;
-background:#111827;
-border-radius:12px;
-border:1px solid rgba(255,255,255,.06);
-
-}
-
-.info p{
-
-display:flex;
-justify-content:space-between;
-margin:8px 0;
-color:#d1d5db;
-font-size:14px;
+margin-top:25px;
+font-size:13px;
+color:#9ca3af;
+line-height:22px;
 
 }
 
 .footer{
 
-margin-top:20px;
-text-align:center;
-font-size:13px;
-color:#9ca3af;
-line-height:22px;
+margin-top:25px;
+font-size:12px;
+color:#6b7280;
 
 }
 
@@ -179,115 +142,86 @@ line-height:22px;
 
 <div class="card">
 
-<div class="logo">
-
-C
-
-</div>
+<div class="logo">🪙</div>
 
 <h1>CATI</h1>
 
-<p class="sub">
-
-Secure CATI Token Presale
-
+<p class="subtitle">
+Secure CATI Purchase
 </p>
 
-<div class="rate">
-
-50 GRAM = 6,000,000 CATI
-
-</div>
+<div class="input">
 
 <input
 id="amount"
 type="number"
 placeholder="Enter GRAM Amount">
 
-<div class="receive">
-
-<p>You Will Receive</p>
-
-<h2 id="tokens">
-
-0 CATI
-
-</h2>
-
 </div>
 
-<div class="info">
+<div id="tokens">
 
-<p>
-<span>Network</span>
-<span>TON</span>
-</p>
-
-<p>
-<span>Payment</span>
-<span>GRAM</span>
-</p>
-
-<p>
-<span>Status</span>
-<span style="color:#22c55e;">● Online</span>
-</p>
+0 CATI
 
 </div>
 
 <button onclick="pay()">
 
-🚀 BUY CATI
+Buy CATI
 
 </button>
 
-<div class="footer">
+<div class="info">
 
-✔ Secure payment via Tonkeeper<br>
-✔ Fast blockchain confirmation<br>
-✔ Powered by TON Network
+Exchange Rate<br><br>
+
+<b>50 GRAM = 6,000,000 CATI</b>
 
 </div>
 
-</div>  
+<div class="footer">
+
+Powered by Blockchain Payment
+
+</div>
+
+</div>
+
 <script>
 
-const wallet = "UQD0N_u4lRmmPiLLQdCZFduiiAub7Oh6ftWzIn7D88sumQ_9";
+document.getElementById("amount").addEventListener("input",function(){
 
-const amountInput = document.getElementById("amount");
-const tokensLabel = document.getElementById("tokens");
+let amount=parseFloat(this.value)||0;
 
-amountInput.addEventListener("input", function () {
+let tokens=(amount/50)*6000000;
 
-    let amount = parseFloat(this.value) || 0;
+document.getElementById("tokens").innerHTML=
 
-    let tokens = (amount / 50) * 6000000;
-
-    tokensLabel.innerHTML = tokens.toLocaleString() + " CATI";
+tokens.toLocaleString()+" CATI";
 
 });
 
-function pay() {
+function pay(){
 
-    let amount = parseFloat(amountInput.value);
+let amount=document.getElementById("amount").value;
 
-    if (!amount || amount <= 0) {
+if(amount==""){
 
-        alert("Please enter a valid GRAM amount.");
+alert("Enter GRAM amount");
 
-        return;
+return;
 
-    }
+}
 
-    const nano = Math.floor(amount * 1000000000);
+let wallet="UQD0N_u4lRmmPiLLQdCZFduiiAub7Oh6ftWzIn7D88sumQ_9";
 
-    window.location.href =
-    `ton://transfer/${wallet}?amount=${nano}`;
+window.location.href=
+
+`ton://transfer/${wallet}?amount=${amount*1000000000}`;
 
 }
 
 </script>
 
 </body>
-
-</html>  
+</html>
